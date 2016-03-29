@@ -26,7 +26,7 @@ for f in files:
                      skiprows=10, 
                      names=columns, usecols=['nu','amp'] )
 
-    ax.scatter(df['nu'],df['amp'], color='red', marker='.', s=7)
+    ax.scatter(df['nu'],df['amp'], color='black', marker='.', s=7)
     total_points += len(df)
 
 ax.set_title('Tiles:' + str(len(files)) + ' Observations:' + str(total_points), fontsize=12)
