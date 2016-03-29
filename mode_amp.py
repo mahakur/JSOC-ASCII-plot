@@ -13,10 +13,10 @@ files = glob("./15dg_test/*.out")
 
 fig = plt.figure()
 
-fig.suptitle('Mode Amplitude', fontsize=20, fontweight='bold')
+fig.suptitle('Mode: Amplitude', fontsize=20, fontweight='bold')
 ax = fig.add_subplot(111)
 ax.set_xlabel(r'${\nu (\mu Hz)}$', fontsize=18)
-ax.set_ylabel(r'${\Lambda}$', fontsize=16) 
+ax.set_ylabel(r'${\Lambda (m/sec^2)}$', fontsize=16) 
 total_points = 0
 
 for f in files:
@@ -26,7 +26,7 @@ for f in files:
                      skiprows=10, 
                      names=columns, usecols=['nu','amp'] )
 
-    ax.scatter(df['nu'],df['amp'], color='red', marker='.', s=6)
+    ax.scatter(df['nu'],df['amp'], color='red', marker='.', s=7)
     total_points += len(df)
 
 ax.set_title('Tiles:' + str(len(files)) + ' Observations:' + str(total_points), fontsize=12)
